@@ -2,7 +2,7 @@
 
 namespace DragonsLair
 {
-    public class Menu //hej 
+    public class Menu 
     {
         private Controller control = new Controller(); //hej dsaad
         
