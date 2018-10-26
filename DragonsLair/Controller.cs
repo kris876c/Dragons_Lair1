@@ -18,6 +18,11 @@ namespace DragonsLair
             Console.WriteLine("Implement this method!");
         }
 
+        public TournamentRepo GetTournamentRepository()
+        {
+            throw new NotImplementedException();
+        }
+
         public void ScheduleNewRound(string tournamentName, bool printNewMatches = true)
         {
             Tournament t = tournamentRepository.GetTournament(tournamentName);
