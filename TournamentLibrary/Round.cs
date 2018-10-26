@@ -6,10 +6,10 @@ namespace TournamentLib
     {
         private List<Match> matches = new List<Match>();
 
-        private string team;
+        private string freeRider;
         public string FreeRider {
-            get { return team; }
-            set { team = value; }
+            get { return freeRider; }
+            set { freeRider = value; }
         }
 
         public void AddMatch(Match m)
