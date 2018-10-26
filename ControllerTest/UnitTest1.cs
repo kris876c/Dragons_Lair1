@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using DragonsLair;
+using TournamentLib;
 
 [TestClass]
 public class TestVersion1
