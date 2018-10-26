@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TournamentLib;
 
-namespace TournamentTest
+namespace TournamentTest 
 {
     [TestClass]
     public class DragonsLairTests
