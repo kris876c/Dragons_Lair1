@@ -20,12 +20,13 @@ namespace DragonsLair
 
         public TournamentRepo GetTournamentRepository()
         {
-            throw new NotImplementedException();
+            return tournamentRepository;
         }
 
         public void ScheduleNewRound(string tournamentName, bool printNewMatches = true)
         {
             Tournament t = tournamentRepository.GetTournament(tournamentName);
+            //Round numberOfRounds = rounds.Count;
         }
 
         public void SaveMatch(string tournamentName, int roundNumber, string team1, string team2, string winningTeam)
