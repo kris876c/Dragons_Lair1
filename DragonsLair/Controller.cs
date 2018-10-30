@@ -30,7 +30,7 @@ namespace DragonsLair
             Round round = new Round();
             if (round.IsMatchesFinished())
             {
-                t.AddRound(round);
+                t.AddRound(round); // test
             }
 
             //if (t.GetTeams().Capacity >= 8) //Måske måle på om alle matches er færdigspillet istedet for(da dette er specifikt)
