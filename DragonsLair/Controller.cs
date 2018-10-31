@@ -40,9 +40,17 @@ namespace DragonsLair
             //}
         }
 
-        public void SaveMatch(string tournamentName, int roundNumber, string team1, string team2, string winningTeam)
+        private void SaveMatch()
         {
-            // Do not implement this method
+            Console.Write("Angiv navn på turnering: ");
+            string tournamentName = Console.ReadLine();
+            Console.Write("Angiv runde: ");
+            int round = int.Parse(Console.ReadLine());
+            Console.Write("Angiv vinderhold: ");
+            string winner = Console.ReadLine();
+            Console.Clear();
+            control.SaveMatch(tournamentName, round, winner);
         }
+
     }
 }
