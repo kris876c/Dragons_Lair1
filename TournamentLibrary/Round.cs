@@ -23,6 +23,24 @@ namespace TournamentLib
             return null;
         }
 
+        public Match GetMatch(string team)
+        {
+            int i = 0;
+            bool matchFound = true;
+            
+            while (matchFound)
+            {
+                if (matches[i].Winner == )
+                {
+
+                    matchFound = false;
+                }
+                i = i + 1;
+                    
+            }
+            return matches[i];
+        }
+
         public bool IsMatchesFinished()
         {
             bool matchesFinished = true;
