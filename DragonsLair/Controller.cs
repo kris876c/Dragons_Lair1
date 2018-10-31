@@ -80,7 +80,7 @@ namespace DragonsLair
             //}
         }
 
-        private void SaveMatch()
+        public void SaveMatch()
         {
             Console.Write("Angiv navn på turnering: ");
             string tournamentName = Console.ReadLine();
