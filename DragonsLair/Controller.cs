@@ -26,12 +26,52 @@ namespace DragonsLair
         public void ScheduleNewRound(string tournamentName, bool printNewMatches = true)
         {
             Tournament t = tournamentRepository.GetTournament(tournamentName);
+            int numberOfRounds = t.GetNumberOfRounds();
+            Round lastround;
+            bool isRoundFinished;
+            List<Team> teams = new List<Team>();            
 
-            Round round = new Round();
-            if (round.IsMatchesFinished())
+            if (numberOfRounds == 0)
             {
-                t.AddRound(round); // test
+                lastround = null;
+                isRoundFinished = true; // Lidt i tvivl om hvordan dette skal kodes
             }
+            else
+            {
+                lastround = t.GetRound(numberOfRounds - 1);
+                isRoundFinished = lastround.IsMatchesFinished();
+            }
+            if (isRoundFinished)
+            {
+                if (lastround == null)
+                {
+                    teams = t.GetTeams();
+                }
+                else
+                {
+                    teams = lastround.GetWinningTeams();
+                    if (lastround.FreeRider != null)
+                    {
+                        //teams.Add(lastround.FreeRider); // FreeRider ikke implementeret
+                    }
+                }
+                if (teams.Count >= 2)
+                {
+                    Round newRound = new Round();
+                    //teams.Shuffle
+                    t.AddRound(newRound);
+                }
+            }
+            else
+            {
+                Console.WriteLine("Error");
+            }
+
+            //Round round = new Round();
+            //if (round.IsMatchesFinished())
+            //{
+            //    t.AddRound(round); // test
+            //}
 
             //if (t.GetTeams().Capacity >= 8) //Måske måle på om alle matches er færdigspillet istedet for(da dette er specifikt)
             //{
