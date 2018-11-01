@@ -27,30 +27,30 @@ namespace DragonsLair
         {
             Tournament t = tournamentRepository.GetTournament(tournamentName);
             int numberOfRounds = t.GetNumberOfRounds();
-            Round lastround;
+            Round lastRound;
             bool isRoundFinished;
             List<Team> teams = new List<Team>();            
 
             if (numberOfRounds == 0)
             {
-                lastround = null;
+                lastRound = null;
                 isRoundFinished = true; // Lidt i tvivl om hvordan dette skal kodes
             }
             else
             {
-                lastround = t.GetRound(numberOfRounds - 1);
-                isRoundFinished = lastround.IsMatchesFinished();
+                lastRound = t.GetRound(numberOfRounds - 1);
+                isRoundFinished = lastRound.IsMatchesFinished();
             }
             if (isRoundFinished)
             {
-                if (lastround == null)
+                if (lastRound == null)
                 {
                     teams = t.GetTeams();
                 }
                 else
                 {
-                    teams = lastround.GetWinningTeams();
-                    if (lastround.FreeRider != null)
+                    teams = lastRound.GetWinningTeams();
+                    if (lastRound.FreeRider != null)
                     {
                         //teams.Add(lastround.FreeRider); // FreeRider ikke implementeret
                     }
