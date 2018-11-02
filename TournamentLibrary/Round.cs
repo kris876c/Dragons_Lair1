@@ -30,7 +30,7 @@ namespace TournamentLib
             
             while (matchFound)
             {
-                if (matches[i].Winner == )
+                if (matches[i].Winner ==  matches[i].Winner)
                 {
 
                     matchFound = false;

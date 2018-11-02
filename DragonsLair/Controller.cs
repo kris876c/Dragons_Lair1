@@ -58,7 +58,16 @@ namespace DragonsLair
                 if (teams.Count >= 2)
                 {
                     Round newRound = new Round();
-                    //teams.Shuffle
+                    //teams.shuffle
+                    //odd number of teams in scrambled
+                    for (int i = 0; i < teams.Count; i++)
+                    {
+                        Match match = new Match();
+                        match.FirstOpponent = teams[i];
+                        i++;
+                        match.SecondOpponent = teams[i];
+                        newRound.AddMatch(match);                        
+                    }
                     t.AddRound(newRound);
                 }
             }
@@ -66,30 +75,10 @@ namespace DragonsLair
             {
                 Console.WriteLine("Error");
             }
-
-            //Round round = new Round();
-            //if (round.IsMatchesFinished())
-            //{
-            //    t.AddRound(round); // test
-            //}
-
-            //if (t.GetTeams().Capacity >= 8) //Måske måle på om alle matches er færdigspillet istedet for(da dette er specifikt)
-            //{
-            //    Round round = new Round(); // Tænker at der skal oprettes en ny runde
-            //    t.AddRound(round); // runden skal tilføjes til en liste via metoden AddRound så man til sidst får det rigtige
-            //}
         }
 
         public void SaveMatch(string tournementName,int roundNo,string winningTeamName)
         {
-            Console.Write("Angiv navn på turnering: ");
-            string tournamentName = Console.ReadLine();
-            Console.Write("Angiv runde: ");
-            int round = int.Parse(Console.ReadLine());
-            Console.Write("Angiv vinderhold: ");
-            string winner = Console.ReadLine();
-            Console.Clear();
-            control.SaveMatch(tournamentName, round, winner);
         }
     }
 }
