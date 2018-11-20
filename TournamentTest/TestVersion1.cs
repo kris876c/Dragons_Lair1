@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TournamentLib;
 
-namespace TournamentTest
+namespace TournamentTest 
 {
     [TestClass]
     public class DragonsLairTests
@@ -13,6 +13,7 @@ namespace TournamentTest
         public void SetupForTest()
         {
             currentTournament = new Tournament("Vinter Turnering");
+            currentTournament.SetupTestRounds();
         }
 
         [TestMethod]
