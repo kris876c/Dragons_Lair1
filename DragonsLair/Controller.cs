@@ -27,5 +27,10 @@ namespace DragonsLair
         {
             // Do not implement this method
         }
+
+        public void ShowGame(string GameName)
+        {
+
+        }    
     }
 }
