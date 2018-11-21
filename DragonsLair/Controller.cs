@@ -81,9 +81,11 @@ namespace DragonsLair
         {
         }
 
-        public void ShowGame(string GameName)
-        {
 
-        }    
+        public void AddGame(string AddName)
+        {
+            Console.WriteLine();
+            Console.ReadLine();
+        }
     }
 }

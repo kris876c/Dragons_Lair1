@@ -1,11 +1,26 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DragonsLair
 {
     public class Menu 
     {
         private Controller control = new Controller(); //hej dsaad
-        
+        public List<string> addedgame = new List<string>();
+        public bool GameAdded = false;
+        public object AddName
+        {
+            get
+            {
+                return AddName;
+            }
+
+            set
+            {
+               
+            }
+        }
+
         public void Show()
         {
             bool running = true;
@@ -30,6 +45,9 @@ namespace DragonsLair
                     case "4":
                         ShowGame();
                         break;
+                    case "5":
+                        AddGame();
+                        break;
                     default:
                         Console.WriteLine("Ugyldigt valg.");
                         Console.ReadLine();
@@ -41,12 +59,13 @@ namespace DragonsLair
         private void ShowMenu()
         {
             Console.WriteLine("Dragons Lair");
-            Console.WriteLine();
+            Console.WriteLine("------------------------------------");
             Console.WriteLine("1. Præsenter turneringsstilling");
             Console.WriteLine("2. Planlæg runde i turnering");
             Console.WriteLine("3. Registrér afviklet kamp");
-            Console.WriteLine("4. Vis hvilket spil der spilles");
-            Console.WriteLine("");
+            Console.WriteLine("4. Vis Spillet");
+            Console.WriteLine("5. Tilføj et spil");
+            Console.WriteLine("------------------------------------");
             Console.WriteLine("0. Exit");
         }
 
@@ -63,13 +82,6 @@ namespace DragonsLair
             string tournamentName = Console.ReadLine();
             Console.Clear();
             control.ShowScore(tournamentName);
-        }
-
-        private void ShowGame()
-        {
-            Console.WriteLine("Navn på spillet er: ");
-            string NameOfGame = Console.ReadLine();
-
         }
 
         private void ScheduleNewRound()
@@ -90,6 +102,58 @@ namespace DragonsLair
             string winner = Console.ReadLine();
             Console.Clear();
             control.SaveMatch(tournamentName, round, winner);
+        }
+
+        public void ShowGame()
+        {
+            
+
+            if (GameAdded == true)
+            {
+                Console.WriteLine($"Spilet er: {addedgame[0]} ");
+                Console.WriteLine();
+
+            }
+            else
+            {
+                Console.WriteLine($"Der er ikke tilføjet et spil til turneringen.");
+                Console.WriteLine($"Tilføj venligst et spil.");
+            }
+
+
+        }
+
+
+        //{
+        //    bool Value = true;
+        //    Console.WriteLine();
+
+        //    if (Value)
+        //    {
+        //        Console.WriteLine($"Spillet er: ");
+        //        Console.ReadLine();
+        //    }
+
+        //    if (!Value)
+        //    {
+        //        Console.WriteLine("Der er ikke tilføjet et spil");
+        //        Console.ReadLine();
+        //    }
+        //}
+
+
+        public void AddGame()
+        {
+            
+                
+
+                for (int k = 0; k < 1; k++)
+                {
+                    Console.WriteLine("Tilføj spil: ");
+                    addedgame.Add(Console.ReadLine());
+                GameAdded = true;
+                }
+            
         }
     }
 }

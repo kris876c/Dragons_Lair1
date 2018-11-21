@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TournamentLib
 {
@@ -25,10 +26,10 @@ namespace TournamentLib
                 if (team.Name == teamName)
                     return team;
             }
-               
+
             return null;
         }
-      
+
         public void AddTeam(Team team)
         {
             teams.Add(team);
@@ -142,6 +143,22 @@ namespace TournamentLib
 
             rounds.Add(round3);
         }
+
+
+
+
+        //public void ADD()
+        //{
+        //    List<string> list = new List<string>();
+
+        //    for (int k = 0; k < 5; k++)
+        //    {
+        //        Console.WriteLine("Tilføj spil: ");
+        //        list.Add(Console.ReadLine());
+        //    }
+        //}
     }
 }
+
+
 
